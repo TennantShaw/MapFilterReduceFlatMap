@@ -9,28 +9,96 @@
 import XCTest
 @testable import MapFilterReduceFlatMap20170411
 
+var students: [String: Set<String>] = [
+    "Susan" : [
+        "Porcupine",
+        "Armadillo",
+        "Opossum",
+        "Goat",
+    ],
+    "Suzanne" : [
+        "Zebra",
+        "Porcupine",
+    ],
+    "Susie" : [],
+    "Siouxsie" : [
+        "Zebra",
+        "Porcupine",
+        "Elephant",
+        "Rabbit",
+        "Falcon",
+    ],
+    "John" : [
+        "Goat",
+        "Elephant",
+        "Rabbit",
+        "Squid",
+    ],
+    "Jon" : [
+        "Horse",
+        "Hippopotamus",
+        "Butterfly"
+    ],
+    "Jonah" : ["Whale",
+               "Lion",
+               "Zebra",
+               "Dog",
+               "Zebra",
+               "Porcupine",
+               "Armadillo",
+               "Opossum",
+               "Goat",
+               "Elephant",
+               "Rabbit",
+               "Squid",
+               "Falcon",
+               "Octopus",],
+    "Jonathan" : [
+        "Snail",
+        "Cobra"
+    ],
+    "Jonas" : [
+        "Cheetah",
+        "Tiger"
+    ],
+]
+
+
 class MapFilterReduceFlatMap20170411Tests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testNames() {
+        let result = names(students)
+        let expected = ["John", "Jon", "Jonah", "Jonas", "Jonathan", "Siouxsie", "Susan", "Susie", "Suzanne"]
+        XCTAssertEqual(result, expected)
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testAnimalCount() {
+        let result = animalCount(students)
+        let expected: [(name: String, count: Int)] = [("John", 4), ("Jon", 3), ("Jonah", 13), ("Jonas", 2), ("Jonathan", 2), ("Siouxsie", 5), ("Susan", 4), ("Susie", 0), ("Suzanne", 2)]
+
+        XCTAssertEqual(result.count, expected.count)
+
+        
+        for (resultItem, expectedItem) in zip(result, expected) {
+            XCTAssertEqual(resultItem.name, expectedItem.name)
+            XCTAssertEqual(resultItem.count, expectedItem.count)
         }
     }
     
+    func testSpoilSport() {
+        let result = spoilSport(names: students)
+        var expected: Set<"Susie">
+        XCTAssertEqual(result, expected)
+    }
 }
+
+// or
+//        XCTAssertTrue(areEqual(lhs: result, rhs: expected))
+//
+//func areEqual (lhs: [(name: String, count: Int)], rhs: [(name: String, count: Int)]) -> Bool {
+//    zip(lhs, rhs).reduce(lhs.count == rhs.count) { (accum, element) in
+//        let (left, right) = element
+//        return accum && (left == right)
+//    }
+//    return true
+//}
+
