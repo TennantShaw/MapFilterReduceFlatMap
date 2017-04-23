@@ -30,7 +30,6 @@
 		303710F91E9D7BF700A08F1B /* MapFilterReduceFlatMap20170411Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapFilterReduceFlatMap20170411Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		303710FE1E9D7BF800A08F1B /* MapFilterReduceFlatMap20170411Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFilterReduceFlatMap20170411Tests.swift; sourceTree = "<group>"; };
 		303711001E9D7BF800A08F1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3037110A1E9D7CA400A08F1B /* MapFilterReduceFlatMap20170411.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MapFilterReduceFlatMap20170411.playground; sourceTree = SOURCE_ROOT; };
 		3037110B1E9D7DD300A08F1B /* MapFilterReduce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapFilterReduce.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,7 +75,6 @@
 			children = (
 				303710F31E9D7BF700A08F1B /* MapFilterReduceFlatMap20170411.h */,
 				3037110B1E9D7DD300A08F1B /* MapFilterReduce.swift */,
-				3037110A1E9D7CA400A08F1B /* MapFilterReduceFlatMap20170411.playground */,
 				303710F41E9D7BF700A08F1B /* Info.plist */,
 			);
 			path = MapFilterReduceFlatMap20170411;

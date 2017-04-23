@@ -90,6 +90,11 @@ func spoilSport(_ input: [String: Set<String>]) -> Set<String> {
 //4.
 
 //5.
+func averageCount(_ input: [String: Set<String>]) -> Int {
+    let count: [Int] = input.values.map({$0.count})
+    let average = floor(Double(count.reduce(0, +) / (count.count)))
+    return Int(average)
+}
 
 //6.
 

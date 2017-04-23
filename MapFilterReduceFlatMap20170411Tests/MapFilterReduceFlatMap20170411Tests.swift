@@ -85,20 +85,19 @@ class MapFilterReduceFlatMap20170411Tests: XCTestCase {
     }
     
     func testSpoilSport() {
-        let result = spoilSport(names: students)
-        var expected: Set<"Susie">
+        let result = spoilSport(students)
+        let expected: Set<String> = (["Susie"])
+        XCTAssertEqual(result, expected)
+    }
+    
+    func testAverageCount() {
+        let result = averageCount(students)
+        let expected: Int = 3
         XCTAssertEqual(result, expected)
     }
 }
 
-// or
-//        XCTAssertTrue(areEqual(lhs: result, rhs: expected))
-//
-//func areEqual (lhs: [(name: String, count: Int)], rhs: [(name: String, count: Int)]) -> Bool {
-//    zip(lhs, rhs).reduce(lhs.count == rhs.count) { (accum, element) in
-//        let (left, right) = element
-//        return accum && (left == right)
-//    }
-//    return true
-//}
+
+
+
 
