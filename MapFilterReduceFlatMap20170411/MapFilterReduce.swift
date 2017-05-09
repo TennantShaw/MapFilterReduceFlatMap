@@ -88,6 +88,26 @@ func spoilSport(_ input: [String: Set<String>]) -> Set<String> {
 }
 
 //4.
+func findStudent(_ input: [String: Set<String>], animalLover: Bool) -> Set<String> {
+    
+    let mostAnimalsLoved = input.reduce(input.first!) { (key, element) in
+        if element.value.count > key.value.count {
+            return element
+        } else {
+            return key
+        }
+    }
+
+
+    let leastAnimalsLoved = input.reduce(input.first!) { (key, element) in
+        if element.value.count < key.value.count {
+            return element
+        } else {
+            return key
+        }
+    }
+
+}
 
 //5.
 func averageCount(_ input: [String: Set<String>]) -> Int {
@@ -97,15 +117,23 @@ func averageCount(_ input: [String: Set<String>]) -> Int {
 }
 
 //6.
-
+func allAnimals1(_ input: [String: Set<String>]) -> [Set<String>] {
+    let sortedStudentList = input.sorted { (lhs, rhs) in (lhs.key < rhs.key)}
+    var sortedAnimalList = [Set<String>]()
+    
+    for (_, value) in sortedStudentList {
+        sortedAnimalList.append(value)
+    }
+    return sortedAnimalList
+}
 
 //7.
-
-//8.
-
-//9.
-
-//10.
+func allAnimals2(_ input: [String: Set<String>]) -> [String] {
+    let sortedAnimalLists: [Set<String>] = allAnimals1(students)
+    let sortedAnimalList: [String] = sortedAnimalLists.flatMap ({ $0 })
+    print(sortedAnimalList)
+    return sortedAnimalList
+}
 
 
 

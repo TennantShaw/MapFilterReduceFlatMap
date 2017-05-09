@@ -95,6 +95,18 @@ class MapFilterReduceFlatMap20170411Tests: XCTestCase {
         let expected: Int = 3
         XCTAssertEqual(result, expected)
     }
+    
+    func testAllAnimals1() {
+        let result = allAnimals1(students)
+        let expected: [Set<String>] = [Set(["Goat", "Elephant", "Squid", "Rabbit"]), Set(["Butterfly", "Horse", "Hippopotamus"]), Set(["Dog", "Elephant", "Goat", "Falcon", "Octopus", "Lion", "Whale", "Porcupine", "Opossum", "Squid", "Armadillo", "Zebra", "Rabbit"]), Set(["Cheetah", "Tiger"]), Set(["Cobra", "Snail"]), Set(["Elephant", "Zebra", "Falcon", "Porcupine", "Rabbit"]), Set(["Goat", "Armadillo", "Porcupine", "Opossum"]), Set([]), Set(["Porcupine", "Zebra"])]
+        XCTAssertEqual(result, expected)
+    }
+    
+    func testAllAnimals2() {
+        let result = allAnimals2(students)
+        let expected: [String] = ["Goat", "Elephant", "Squid", "Rabbit", "Butterfly", "Horse", "Hippopotamus", "Dog", "Elephant", "Goat", "Falcon", "Octopus", "Lion", "Whale", "Porcupine", "Opossum", "Squid", "Armadillo", "Zebra", "Rabbit", "Cheetah", "Tiger", "Cobra", "Snail", "Elephant", "Zebra", "Falcon", "Porcupine", "Rabbit", "Goat", "Armadillo", "Porcupine", "Opossum", "Porcupine", "Zebra"]
+        XCTAssertEqual(result, expected)
+    }
 }
 
 
